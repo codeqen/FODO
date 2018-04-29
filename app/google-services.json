@@ -59,6 +59,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "188301936182-c85rp5goemhpreigji80r3itaeqfrqdq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "nu.yakutomi.campuscafe",
+            "certificate_hash": "bfb5fa9e545bf7d8297b97d3dc6a59ceca295e9d"
+          }
+        },
+        {
           "client_id": "188301936182-4qpmb0ckb8d60echj8p2f3i06ki68e3c.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

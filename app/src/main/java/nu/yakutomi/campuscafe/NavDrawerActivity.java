@@ -1,6 +1,7 @@
 package nu.yakutomi.campuscafe;
 
 import android.app.Activity;
+import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.Fragment;
@@ -58,8 +59,12 @@ public class NavDrawerActivity extends AppCompatActivity
             NavHeaderEmail.setText(user.getEmail());
             ImageView NavHeaderProfilePic = headerView.findViewById(R.id.nav_header_profile_image);
 
-            String url = user.getPhotoUrl().toString();
-            Picasso.with(NavDrawerActivity.this).load(url).into(NavHeaderProfilePic);
+            if(user.getPhotoUrl() != null) {
+                String url;
+                url = user.getPhotoUrl().toString();
+                Picasso.with(NavDrawerActivity.this).load(url).into(NavHeaderProfilePic);
+            }
+
         }
         else { Log.d("MA/FB", "User null!"); }
 
@@ -108,16 +113,16 @@ public class NavDrawerActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        /*if (id == R.id.action_settings) {
             return true;
-        }
+        }*/
 
         return super.onOptionsItemSelected(item);
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
         //NavigationView navigationView = findViewById(R.id.nav_view);
