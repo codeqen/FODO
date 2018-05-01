@@ -1,29 +1,24 @@
 package nu.yakutomi.campuscafe;
 
-import com.google.firebase.database.Exclude;
-
-import java.util.HashMap;
-import java.util.Map;
-
 public class OrderHistoryModel {
     private String mItem;
-    private String mPrice;
-    private String mUid;
+    private String mQuantity;
+//    private String mUid;
 
-    public OrderHistoryModel() {}  // Needed for Firebase
+    OrderHistoryModel() {}  // Needed for Firebase
 
-    public OrderHistoryModel(String item, String price, String uid) {
+    public OrderHistoryModel(String item, String quantity, String uid) {
         mItem = item;
-        mPrice = price;
-        mUid = uid;
+        mQuantity = quantity;
+  //      mUid = uid;
     }
 
 
 
     public String getItem() { return mItem; }
     public void setItem(String item) { this.mItem = item; }
-    public String getPrice() { return mPrice; }
-    public void setPrice(String price) { this.mPrice = price; }
-    public String getUid() { return mUid; }
+    public String getQuantity() { return mQuantity; }
+    public void setQuantity(String quantity) { this.mQuantity = quantity; }
+    //public String getUid() { return mUid; }
 
 }

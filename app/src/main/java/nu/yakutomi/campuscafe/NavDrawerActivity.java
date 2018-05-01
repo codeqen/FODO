@@ -1,23 +1,19 @@
 package nu.yakutomi.campuscafe;
 
-import android.app.Activity;
-import android.support.annotation.NonNull;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
-import android.view.View;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -29,6 +25,7 @@ public class NavDrawerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private NavigationView navigationView;
     private MenuFragment firstFragment = new MenuFragment();
+    private Menu overflow;
     private OrderHistoryFragment secondFragment = new OrderHistoryFragment();
 
 
@@ -102,6 +99,7 @@ public class NavDrawerActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
+        overflow = menu;
         return true;
     }
 
@@ -128,6 +126,7 @@ public class NavDrawerActivity extends AppCompatActivity
         //NavigationView navigationView = findViewById(R.id.nav_view);
         if (id == R.id.nav_food_menu) {
             navigationView.getMenu().getItem(0).setChecked(true);
+            overflow.findItem(R.id.action_view_cart).setVisible(true);
             // In case this activity was started with special instructions from an
             // Intent, pass the Intent's extras to the fragment as arguments
             firstFragment.setArguments(getIntent().getExtras());
@@ -139,6 +138,7 @@ public class NavDrawerActivity extends AppCompatActivity
             setTitle(getString(R.string.title_activity_main));
         } else if (id == R.id.nav_order_history) {
             setTitle(getString(R.string.title_activity_order_history));
+            overflow.findItem(R.id.action_view_cart).setVisible(false);
             navigationView.getMenu().getItem(1).setChecked(true);
             // In case this activity was started with special instructions from an
             // Intent, pass the Intent's extras to the fragment as arguments

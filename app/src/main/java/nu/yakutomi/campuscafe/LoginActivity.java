@@ -117,7 +117,7 @@ public class LoginActivity extends AppCompatActivity {
             name = updateUser.getDisplayName();
             Snackbar.make(findViewById(R.id.login_activity_linear1), "Welcome, " + name + "!", Snackbar.LENGTH_SHORT).show();
             Log.d("FB", updateUser.getDisplayName()+" "+updateUser.getEmail()+" "+updateUser.getPhoneNumber()+updateUser.getPhotoUrl());
-            long LOGIN_DELAY_LENGTH = 300;
+            long LOGIN_DELAY_LENGTH = 0;
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {

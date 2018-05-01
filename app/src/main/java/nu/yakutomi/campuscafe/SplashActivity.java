@@ -1,15 +1,13 @@
 package nu.yakutomi.campuscafe;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.Window;
-import nu.yakutomi.campuscafe.LoginActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
-    private final int SPLASH_DISPLAY_LENGTH = 500;
+    private final int SPLASH_DISPLAY_LENGTH = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
