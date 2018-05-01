@@ -7,7 +7,7 @@ public class OrderHistoryModel {
 
     OrderHistoryModel() {}  // Needed for Firebase
 
-    public OrderHistoryModel(String item, String quantity, String uid) {
+    public OrderHistoryModel(String item, String quantity) {
         mItem = item;
         mQuantity = quantity;
   //      mUid = uid;

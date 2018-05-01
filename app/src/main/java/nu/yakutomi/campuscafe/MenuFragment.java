@@ -1,15 +1,22 @@
 package nu.yakutomi.campuscafe;
 
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -19,10 +26,13 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 public class MenuFragment extends Fragment {
     private RecyclerView recyclerView;
+    private ArrayList<OrderHistoryModel> cart;
     private ItemsAdapter ItemObj;
     private static RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
@@ -84,8 +94,54 @@ public class MenuFragment extends Fragment {
         ItemObj = new ItemsAdapter(items, getActivity());
         adapter = ItemObj;
         recyclerView.setAdapter(adapter);
-        ArrayList<OrderHistoryModel> cart = ItemObj.getCart();
+        cart = ItemObj.getCart();
         return view;
+    }
+    // this is necessary to inform parent activity that we are changing menu in fragment
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        // TODO Add your menu entries here
+        menu.findItem(R.id.action_view_cart).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                final AlertDialog.Builder alertBuilder = new AlertDialog.Builder(getView().getContext()).setTitle("Cart");
+                final AlertDialog alertDialog2 = alertBuilder.create();
+                String itemsandprices = "Quantity     Item\n\n";
+
+                for(int i=0; i < cart.size(); i++) {
+                    itemsandprices = itemsandprices+cart.get(i).getQuantity()+"                 "+cart.get(i).getItem()+"\n";
+                }
+                alertDialog2.setMessage("\n"+itemsandprices+"\n");
+                alertDialog2.setButton(Dialog.BUTTON_POSITIVE, "PAY", new DialogInterface.OnClickListener() {
+                     public void onClick(DialogInterface dialog, int which) {
+                        final String timeStamp = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
+                                .format(new Timestamp(System.currentTimeMillis()));
+                        final DatabaseReference orderHistoryChild = FirebaseDatabase.getInstance().getReference("Order History/"+currentUser.getUid());
+                        Log.d("MF/FB", orderHistoryChild.getKey());
+                        orderHistoryChild.child(timeStamp);
+                        Log.d("MF/FB", orderHistoryChild.child(timeStamp).getKey());
+                        orderHistoryChild.child(timeStamp).child("Items");
+                        Log.d("MF/FB", orderHistoryChild.child(timeStamp).child("Items").getKey());
+                        for(int i=0; i<cart.size(); i++) {
+                            orderHistoryChild.child(timeStamp).child("Items")
+                                    .child(cart.get(i).getItem()).setValue(cart.get(i).getQuantity());
+                        }
+                        cart.clear();
+                        Toast.makeText(getContext(), "Payment Done!\nCheck Order History.", Toast.LENGTH_LONG).show();
+                        alertDialog2.dismiss();
+                    }
+                });
+                alertDialog2.show();
+                return true;
+            }
+        });
+        super.onCreateOptionsMenu(menu, inflater);
     }
 
 }

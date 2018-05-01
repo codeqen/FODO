@@ -103,6 +103,10 @@ public class NavDrawerActivity extends AppCompatActivity
         return true;
     }
 
+    Menu getMenuObj() {
+        return overflow;
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -126,7 +130,6 @@ public class NavDrawerActivity extends AppCompatActivity
         //NavigationView navigationView = findViewById(R.id.nav_view);
         if (id == R.id.nav_food_menu) {
             navigationView.getMenu().getItem(0).setChecked(true);
-            overflow.findItem(R.id.action_view_cart).setVisible(true);
             // In case this activity was started with special instructions from an
             // Intent, pass the Intent's extras to the fragment as arguments
             firstFragment.setArguments(getIntent().getExtras());
@@ -138,7 +141,6 @@ public class NavDrawerActivity extends AppCompatActivity
             setTitle(getString(R.string.title_activity_main));
         } else if (id == R.id.nav_order_history) {
             setTitle(getString(R.string.title_activity_order_history));
-            overflow.findItem(R.id.action_view_cart).setVisible(false);
             navigationView.getMenu().getItem(1).setChecked(true);
             // In case this activity was started with special instructions from an
             // Intent, pass the Intent's extras to the fragment as arguments

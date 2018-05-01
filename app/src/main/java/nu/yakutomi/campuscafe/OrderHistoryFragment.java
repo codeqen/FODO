@@ -8,6 +8,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -28,6 +30,19 @@ public class OrderHistoryFragment extends Fragment {
     //private View v;
     private ArrayList<TimestampModel> orderhTime;
     private FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+
+    // this is necessary to inform parent activity that we are changing menu in fragment
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        menu.findItem(R.id.action_view_cart).setVisible(false);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

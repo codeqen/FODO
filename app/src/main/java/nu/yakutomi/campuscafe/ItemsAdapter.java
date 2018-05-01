@@ -11,8 +11,6 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.MyViewHolder> {
@@ -39,7 +37,7 @@ class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.MyViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ItemsAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ItemsAdapter.MyViewHolder holder, final int position) {
         final int innerPos = position;
         final TextView itemTitleHold = holder.itemTitle;
         TextView priceHold = holder.price;
@@ -51,18 +49,23 @@ class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.MyViewHolder> {
             @Override
             public void onClick(View v){
                 // code to execute when an item is clicked in the Menu
-                String timeStamp = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Timestamp(System.currentTimeMillis()));
-                Log.d(TAG, timeStamp);
                 OrderHistoryModel currentCartItem = new OrderHistoryModel();
                 currentCartItem.setQuantity("1");
                 currentCartItem.setItem(items.get(innerPos).getItem());
-
+                int found=0;
+                for(int i=0; i < cart.size(); i++) {
+                    if(cart.get(i).getItem().equals(items.get(position).getItem())) {
+                        found=1;
+                        cart.get(i).setQuantity(String.valueOf(Integer.parseInt(cart.get(i).getQuantity())+1));
+                        Snackbar.make(v, currentCartItem.getItem()+" added! Quantity: "+cart.get(i).getQuantity(), 700).show();
+                    }
+                }
+                if(found == 0) {
                     cart.add(currentCartItem);
-                    Snackbar.make(v, currentCartItem.getItem()+" added!", 700).show();
-
+                    Snackbar.make(v, currentCartItem.getItem()+" added! Quantity: 1", 700).show();
+                }
             }
         });
-
     }
 
     @Override
