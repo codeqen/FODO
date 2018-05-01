@@ -9,6 +9,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -31,33 +32,30 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 public class MenuFragment extends Fragment {
-    private RecyclerView recyclerView;
     private ArrayList<OrderHistoryModel> cart;
-    private ItemsAdapter ItemObj;
     private static RecyclerView.Adapter adapter;
-    private RecyclerView.LayoutManager layoutManager;
     //private Set<String> items = new HashSet<>();
    // private Set<String> price = new HashSet<>();
     //private View v;
     private ArrayList<ItemsModel> items;
     private FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
-    private DatabaseReference mDatabase;
+
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.menu_fragment, container, false);
         Log.d("MF", "Inside onCreateView");
-        recyclerView = view.findViewById(R.id.menu_items_recycler);
+        RecyclerView recyclerView = view.findViewById(R.id.menu_items_recycler);
         recyclerView.setHasFixedSize(true);
 
 
-        layoutManager = new LinearLayoutManager(getActivity());
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
 
         items = new ArrayList<>();
-        mDatabase = FirebaseDatabase.getInstance().getReference("Items");
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("Items");
         mDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -91,10 +89,10 @@ public class MenuFragment extends Fragment {
         });
 
         //Log.d("MF", items.get(0).getItem()+items.get(0).getPrice());
-        ItemObj = new ItemsAdapter(items, getActivity());
-        adapter = ItemObj;
+        ItemsAdapter itemObj = new ItemsAdapter(items, getActivity());
+        adapter = itemObj;
         recyclerView.setAdapter(adapter);
-        cart = ItemObj.getCart();
+        cart = itemObj.getCart();
         return view;
     }
     // this is necessary to inform parent activity that we are changing menu in fragment
@@ -112,28 +110,39 @@ public class MenuFragment extends Fragment {
             public boolean onMenuItemClick(MenuItem item) {
                 final AlertDialog.Builder alertBuilder = new AlertDialog.Builder(getView().getContext()).setTitle("Cart");
                 final AlertDialog alertDialog2 = alertBuilder.create();
-                String itemsandprices = "Quantity     Item\n\n";
+                String spaces = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+                String itemsandprices = "<b>Quantity"+spaces+"Item</b><br><br>";
+
 
                 for(int i=0; i < cart.size(); i++) {
-                    itemsandprices = itemsandprices+cart.get(i).getQuantity()+"                 "+cart.get(i).getItem()+"\n";
+                    if(Integer.parseInt(cart.get(i).getQuantity()) < 10) {
+                        itemsandprices = itemsandprices+"0"+cart.get(i).getQuantity() + spaces + spaces + "&nbsp;" + cart.get(i).getItem() + "<br>";
+                    }
+                    else {
+                        itemsandprices = itemsandprices+cart.get(i).getQuantity() + spaces + spaces + "&nbsp;" + cart.get(i).getItem() + "<br>";
+                    }
                 }
-                alertDialog2.setMessage("\n"+itemsandprices+"\n");
+                alertDialog2.setMessage(Html.fromHtml("<br>"+itemsandprices+"<br>"));
                 alertDialog2.setButton(Dialog.BUTTON_POSITIVE, "PAY", new DialogInterface.OnClickListener() {
                      public void onClick(DialogInterface dialog, int which) {
                         final String timeStamp = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
                                 .format(new Timestamp(System.currentTimeMillis()));
                         final DatabaseReference orderHistoryChild = FirebaseDatabase.getInstance().getReference("Order History/"+currentUser.getUid());
-                        Log.d("MF/FB", orderHistoryChild.getKey());
                         orderHistoryChild.child(timeStamp);
-                        Log.d("MF/FB", orderHistoryChild.child(timeStamp).getKey());
                         orderHistoryChild.child(timeStamp).child("Items");
-                        Log.d("MF/FB", orderHistoryChild.child(timeStamp).child("Items").getKey());
                         for(int i=0; i<cart.size(); i++) {
                             orderHistoryChild.child(timeStamp).child("Items")
                                     .child(cart.get(i).getItem()).setValue(cart.get(i).getQuantity());
                         }
                         cart.clear();
                         Toast.makeText(getContext(), "Payment Done!\nCheck Order History.", Toast.LENGTH_LONG).show();
+                        alertDialog2.dismiss();
+                    }
+                });
+                alertDialog2.setButton(Dialog.BUTTON_NEGATIVE, "CLEAR", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        cart.clear();
+                        Toast.makeText(getContext(), "Cart Cleared!", Toast.LENGTH_LONG).show();
                         alertDialog2.dismiss();
                     }
                 });
