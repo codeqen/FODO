@@ -49,9 +49,8 @@ class TimestampAdapter extends RecyclerView.Adapter<TimestampAdapter.MyViewHolde
         itemTitleHold.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final AlertDialog.Builder alertBuilder = new AlertDialog.Builder(v.getContext()).setTitle("Order Info");
-                final AlertDialog alertDialog = alertBuilder.create();
-                alertDialog.setButton(Dialog.BUTTON_POSITIVE, "DONE", new DialogInterface.OnClickListener() {
+                final AlertDialog alertDialog = new AlertDialog.Builder(v.getContext()).setTitle("Order Info").create();
+                alertDialog.setButton(Dialog.BUTTON_NEUTRAL, "DONE", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         alertDialog.dismiss();
                     }

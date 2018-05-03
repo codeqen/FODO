@@ -108,21 +108,20 @@ public class MenuFragment extends Fragment {
         menu.findItem(R.id.action_view_cart).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
-                final AlertDialog.Builder alertBuilder = new AlertDialog.Builder(getView().getContext()).setTitle("Cart");
-                final AlertDialog alertDialog2 = alertBuilder.create();
+                final AlertDialog alertDialog2 = new AlertDialog.Builder(requireContext()).setTitle("Cart").create();
                 String spaces = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-                String itemsandprices = "<b>Quantity"+spaces+"Item</b><br><br>";
+                StringBuilder itemsAndPrices = new StringBuilder("<b>Quantity" + spaces + "Item</b><br><br>");
 
 
                 for(int i=0; i < cart.size(); i++) {
                     if(Integer.parseInt(cart.get(i).getQuantity()) < 10) {
-                        itemsandprices = itemsandprices+"0"+cart.get(i).getQuantity() + spaces + spaces + "&nbsp;" + cart.get(i).getItem() + "<br>";
+                        itemsAndPrices.append("0").append(cart.get(i).getQuantity()).append(spaces).append(spaces).append("&nbsp;").append(cart.get(i).getItem()).append("<br>");
                     }
                     else {
-                        itemsandprices = itemsandprices+cart.get(i).getQuantity() + spaces + spaces + "&nbsp;" + cart.get(i).getItem() + "<br>";
+                        itemsAndPrices.append(cart.get(i).getQuantity()).append(spaces).append(spaces).append("&nbsp;").append(cart.get(i).getItem()).append("<br>");
                     }
                 }
-                alertDialog2.setMessage(Html.fromHtml("<br>"+itemsandprices+"<br>"));
+                alertDialog2.setMessage(Html.fromHtml("<br>"+itemsAndPrices+"<br>"));
                 alertDialog2.setButton(Dialog.BUTTON_POSITIVE, "PAY", new DialogInterface.OnClickListener() {
                      public void onClick(DialogInterface dialog, int which) {
                         final String timeStamp = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
@@ -134,8 +133,13 @@ public class MenuFragment extends Fragment {
                             orderHistoryChild.child(timeStamp).child("Items")
                                     .child(cart.get(i).getItem()).setValue(cart.get(i).getQuantity());
                         }
-                        cart.clear();
-                        Toast.makeText(getContext(), "Payment Done!\nCheck Order History.", Toast.LENGTH_LONG).show();
+                        if(cart.size() < 1) {
+                            Toast.makeText(getContext(), "Cart empty.", Toast.LENGTH_LONG).show();
+                        }
+                        else {
+                            Toast.makeText(getContext(), "Payment Done!\nCheck Order History.", Toast.LENGTH_LONG).show();
+                            cart.clear();
+                        }
                         alertDialog2.dismiss();
                     }
                 });
