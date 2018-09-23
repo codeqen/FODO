@@ -21,8 +21,7 @@ Prepared by</b>
 
 <i>
 <ul>
-<li>Table of Contents	ii</li>
-<li>Revision History	ii</li>
+    <li>Revision History</li>
 </ul>
 <ol>
 <li>Introduction	                                
@@ -34,7 +33,7 @@ Prepared by</b>
         <li>	References	                                </li>
     </ol>
 </li>
-<li>	Overall Description	
+<li>Overall Description	
     <ol>
         <li>	Product Perspective	                        </li>
         <li>	Product Functions                           </li>	
@@ -45,15 +44,21 @@ Prepared by</b>
         <li>	Assumptions and Dependencies	            </li>
     </ol>    
 </li>
-<li>	External Interface Requirements	3
-3.1	User Interfaces	3
-3.2	Hardware Interfaces	3
-3.3	Software Interfaces	3
-3.4	Communications Interfaces	3
-4.	System Features	4
-4.1	System Feature 1	4
-4.2	System Feature 2 (and so on)	4
-5.	Other Nonfunctional Requirements	4
+<li>External Interface Requirements
+    <ol>
+        <li>	User Interfaces	                            </li>
+        <li>	Hardware Interfaces	                        </li>
+        <li>	Software Interfaces	                        </li>
+        <li>	Communications Interfaces	                </li>
+    </ol>
+</li>    
+<li>System Features	  
+    <ol>
+        <li>	System Feature 1	                        </li>
+        <li>	System Feature 2 (and so on)	            </li>
+    </ol>
+</li>
+<li>Other Nonfunctional Requirements	
 5.1	Performance Requirements	4
 5.2	Safety Requirements	5
 5.3	Security Requirements	5
