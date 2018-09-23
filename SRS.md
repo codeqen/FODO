@@ -4,8 +4,12 @@
 
 <h4>Version 1.0 approved</h4>
 
-Prepared by Sayabsi</b> 
-(Sagnik Mitra, Yash Rastogi, Simran Singh, Abhijit Singh)
+Prepared by</b> 
+<ul>
+<li>Sagnik Mitra</li>
+<li>Yash Rastogi</li>
+<li>Simran Singh</li>
+<li>Abhijit Singh</li>
 
 <b>NIIT University
 
@@ -29,15 +33,18 @@ Prepared by Sayabsi</b>
         <li>	References	                                </li>
     </ol>
 </li>
-2.	Overall Description	2
-2.1	Product Perspective	2
-2.2	Product Functions	2
-2.3	User Classes and Characteristics	2
-2.4	Operating Environment	2
-2.5	Design and Implementation Constraints	2
-2.6	User Documentation	2
-2.7	Assumptions and Dependencies	3
-3.	External Interface Requirements	3
+<li>	Overall Description	
+    <ol>
+        <li>	Product Perspective	                        </li>
+        <li>	Product Functions                           </li>	
+        <li>	User Classes and Characteristics	        </li>
+        <li>	Operating Environment	                    </li>
+        <li>	Design and Implementation Constraints	    </li>
+        <li>	User Documentation	                        </li>
+        <li>	Assumptions and Dependencies	            </li>
+    </ol>    
+</li>
+<li>	External Interface Requirements	3
 3.1	User Interfaces	3
 3.2	Hardware Interfaces	3
 3.3	Software Interfaces	3
