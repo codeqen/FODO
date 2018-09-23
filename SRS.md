@@ -1,5 +1,5 @@
 
-<b>Software Requirements Specification 
+<b><h1>SOFTWARE REQUIREMENTS SPECIFICATION</h1><br> 
 
 FODO (Food Ordering App.)
 
