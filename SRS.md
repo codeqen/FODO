@@ -78,15 +78,11 @@ There are no special conventions in this document.
 This document is intended for faculty of Software Engineering Course and the members involved in developing this product. The reader may start reading from section 2.1.
 
 <b>1.4 Product Scope</b>
-The purpose of this project is for each restaurant to have its own personalized app with multiple uses like: Personalized Loyalty Programs, Delivery management and tracking, Inventory management, comprehensive menu display.
+<p>The purpose of this project is for each restaurant to have its own personalized app with multiple uses like: <li><l1>Personalized Loyalty Programs</l1><l2>Delivery management and tracking</l2><l3>Inventory management</l3><l4>Comprehensive menu display</l4></li></p>
 
-<b>1.5 References<b>
-    1. Material Design
-        Google
-        https://material.io/design/
-    2. Firebase
-        Google
-        https://firebase.google.com/
+<b>1.5 References</b>
+    1. Material Design Google - https://material.io/design/
+    2. Firebase Google - https://firebase.google.com/
 
 
 2. Overall Description
