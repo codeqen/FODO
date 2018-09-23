@@ -15,14 +15,21 @@ Prepared by Sayabsi</b>
 
 <b>Table of Contents</b>
 
-<i>Table of Contents	ii
-Revision History	ii
-1.	Introduction	1
-1.1	Purpose	1
-1.2	Document Conventions	1
-1.3	Intended Audience and Reading Suggestions	1
-1.4	Product Scope	1
-1.5	References	1
+<i>
+<ul>
+<li>Table of Contents	ii</li>
+<li>Revision History	ii</li>
+</ul>
+<ol>
+<li>Introduction	                                
+    <ol>
+        <li>    Purpose	                                    </li> 
+        <li>	Document Conventions	                    </li> 
+        <li>	Intended Audience and Reading Suggestions   </li>
+        <li>	Product Scope	                            </li>
+        <li>	References	                                </li>
+    </ol>
+</li>
 2.	Overall Description	2
 2.1	Product Perspective	2
 2.2	Product Functions	2
