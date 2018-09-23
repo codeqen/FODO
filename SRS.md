@@ -6,10 +6,11 @@
 
 Prepared by</b> 
 <ul>
-<li>Sagnik Mitra</li>
-<li>Yash Rastogi</li>
-<li>Simran Singh</li>
-<li>Abhijit Singh</li>
+    <li>Sagnik Mitra</li>
+    <li>Yash Rastogi</li>
+    <li>Simran Singh</li>
+    <li>Abhijit Singh</li>
+</ul>    
 
 <b>NIIT University
 
