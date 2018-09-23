@@ -1,9 +1,8 @@
 
 <b><h1>SOFTWARE REQUIREMENTS SPECIFICATION</h1><br> 
+<h3>FODO (Food Ordering App)</h3>
 
-FODO (Food Ordering App.)
-
-Version 1.0 approved
+<h4>Version 1.0 approved</h4>
 
 Prepared by Sayabsi</b> 
 (Sagnik Mitra, Yash Rastogi, Simran Singh, Abhijit Singh)
