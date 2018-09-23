@@ -1,16 +1,21 @@
 
-Software Requirements Specification
-for
+<b>Software Requirements Specification 
+
 FODO (Food Ordering App.)
+
 Version 1.0 approved
-Prepared by Sayabsi 
+
+Prepared by Sayabsi</b> 
 (Sagnik Mitra, Yash Rastogi, Simran Singh, Abhijit Singh)
-NIIT University
-30th August, 2018
+
+<b>NIIT University
+
+30th August, 2018</b>
 
 
-Table of Contents
-Table of Contents	ii
+<b>Table of Contents</b>
+
+<i>Table of Contents	ii
 Revision History	ii
 1.	Introduction	1
 1.1	Purpose	1
@@ -43,7 +48,7 @@ Revision History	ii
 6.	Other Requirements	5
 Appendix A: Glossary	5
 Appendix B: Analysis Models	5
-Appendix C: To Be Determined List	6
+Appendix C: To Be Determined List	6</i>
 
 
 <b>Revision History</b>
@@ -61,21 +66,21 @@ Version
 
 
 
-1. Introduction
+<b>1. Introduction</b>
 
-1.1 Purpose 
+<b>1.1 Purpose</b> 
 The ‘Food Ordering App’ is an android application designed for restaurants to ease the communication with their customers. The purpose is to remove any ‘middlemen charges’ that are applied by other food applications. Individual restaurants will have their own personalized application for food delivery and/or ordering in-dining.
 
-1.2 Document Conventions
+<b>1.2 Document Conventions</b>
 There are no special conventions in this document.
 
-1.3 Intended Audience and Reading Suggestions
+<b>1.3 Intended Audience and Reading Suggestions</b>
 This document is intended for faculty of Software Engineering Course and the members involved in developing this product. The reader may start reading from section 2.1.
 
-1.4 Product Scope
+<b>1.4 Product Scope</b>
 The purpose of this project is for each restaurant to have its own personalized app with multiple uses like: Personalized Loyalty Programs, Delivery management and tracking, Inventory management, comprehensive menu display.
 
-1.5 References
+<b>1.5 References<b>
     1. Material Design
         Google
         https://material.io/design/
