@@ -174,7 +174,11 @@ Staff user can (in addition to customer user):
 <b>2.7 Assumptions and Dependencies</b>
 <p>TBD
 </p>
-<br>
+
+
+
+
+
 <b>3. External Interface Requirements</b>
 <br>
 <b>3.1 User Interfaces</b>
