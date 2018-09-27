@@ -79,11 +79,18 @@ Prepared by</b>
 <b>Revision History</b>
 <table width="50%">
 <tr>
+    <td>S. No</td>
     <td>Name</td>
     <td>Date</td>
     <td>Reason For Changes</td>
     <td>Version</td>
 </tr>
+<tr>
+    <td>1</td>
+</tr>
+<tr>
+    <td>2</td>
+</tr>    
 </table>
 
 
@@ -115,8 +122,7 @@ Prepared by</b>
         <li>Comprehensive menu display</li>
     </ul></p>
 
-<b>1.5 References</b>
-    <ol>    
+<b>1.5 References</b><ol>    
         <li> Material Design Google - https://material.io/design/</li>
         <li> Firebase Google - https://firebase.google.com/</li>
     </ol>
@@ -169,6 +175,7 @@ Staff user can (in addition to customer user):
 </p>
 <br>
 <b>3. External Interface Requirements</b>
+
 
 <b>3.1 User Interfaces</b>
 <p>Front-end: Material Design Based Android front-end
