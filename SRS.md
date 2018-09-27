@@ -225,8 +225,8 @@ Appendix C: To Be Determined List
 Software Requirements Specification for FODO		Page 5
 
 
-
-Copyright © 2018 by Sayabsi. Permission is granted to distribute this document.
+<br>
+<i><font size=9>Copyright © 2018 by NU. Permission is granted to distribute this document.</font></i>
 
 
 
