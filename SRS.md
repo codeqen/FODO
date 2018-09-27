@@ -122,7 +122,8 @@ Prepared by</b>
         <li>Comprehensive menu display</li>
     </ul></p>
 
-<b>1.5 References</b><ol>    
+<b>1.5 References</b>
+    <ol>
         <li> Material Design Google - https://material.io/design/</li>
         <li> Firebase Google - https://firebase.google.com/</li>
     </ol>
@@ -175,8 +176,7 @@ Staff user can (in addition to customer user):
 </p>
 <br>
 <b>3. External Interface Requirements</b>
-
-
+<br>
 <b>3.1 User Interfaces</b>
 <p>Front-end: Material Design Based Android front-end
    Back-end: Firebase Database
