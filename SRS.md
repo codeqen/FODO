@@ -226,7 +226,7 @@ Software Requirements Specification for FODO		Page 5
 
 
 <br>
-<i><font size=6>Copyright © 2018 by NU. Permission is granted to distribute this document.</font></i>
+<i><font size="8">Copyright © 2018 by NU. Permission is granted to distribute this document.</font></i>
 
 
 
