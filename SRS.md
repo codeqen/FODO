@@ -157,10 +157,10 @@ Staff user can (in addition to customer user):
 
 <b>2.4 Operating Environment</b>
 <p><ul>
-    <li>Client/server system
-    <li> Operating System: Android
-    <li> Database: Firebase NoSQL
-    <li> Platform: Java.
+    <li>Client/server system        </li>
+    <li> Operating System: Android  </li>
+    <li> Database: Firebase NoSQL   </li>
+    <li> Platform: Java.            </li>
 </ul><p>
 
 <b>2.5 Design and Implementation Constraints</b>
@@ -174,16 +174,14 @@ Staff user can (in addition to customer user):
 <b>2.7 Assumptions and Dependencies</b>
 <p>TBD
 </p>
-
-
-
-
-
-<b>3. External Interface Requirements</b>
 <br>
+<b>3. External Interface Requirements</b>
+
 <b>3.1 User Interfaces</b>
-<p>Front-end: Material Design Based Android front-end
-   Back-end: Firebase Database
+<p><ul>
+    <li>Front-end: Material Design Based Android front-end      </li>
+    <li>Back-end: Firebase Database                             </li>
+   </ul>
 </p>
 
 <b>3.2 Hardware Interfaces</b>
