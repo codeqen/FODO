@@ -59,15 +59,21 @@ Prepared by</b>
     </ol>
 </li>
 <li>Other Nonfunctional Requirements	
-5.1	Performance Requirements	4
-5.2	Safety Requirements	5
-5.3	Security Requirements	5
-5.4	Software Quality Attributes	5
-5.5	Business Rules	5
-6.	Other Requirements	5
-Appendix A: Glossary	5
-Appendix B: Analysis Models	5
-Appendix C: To Be Determined List	6</i>
+    <ol>
+        <li>	Performance Requirements	                </li>
+        <li>	Safety Requirements	                        </li>
+        <li>	Security Requirements	                    </li>
+        <li>	Software Quality Attributes	                </li>
+        <li>	Business Rules	                            </li>
+    </ol>
+</li>
+<li>Other Requirements	                                
+</li>
+<ul>    
+<li>Appendix A: Glossary	                                </li>
+<li>Appendix B: Analysis Models	                            </li>
+<li>Appendix C: To Be Determined List	                    </li>
+</ul></i>
 
 
 <b>Revision History</b>
