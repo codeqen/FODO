@@ -68,7 +68,7 @@ Prepared by</b>
     </ol>
 </li>
 <li>Other Requirements	                                
-</li>
+</li></ol>
 <ul>    
 <li>Appendix A: Glossary	                                </li>
 <li>Appendix B: Analysis Models	                            </li>
@@ -77,13 +77,14 @@ Prepared by</b>
 
 
 <b>Revision History</b>
-
-Name
-Date
-Reason For Changes
-Version
-
-
+<table width="50%">
+<tr>
+    <td>Name</td>
+    <td>Date</td>
+    <td>Reason For Changes</td>
+    <td>Version</td>
+</tr>
+</table>
 
 
 
@@ -94,21 +95,31 @@ Version
 <b>1. Introduction</b>
 
 <b>1.1 Purpose</b> 
-The ‘Food Ordering App’ is an android application designed for restaurants to ease the communication with their customers. The purpose is to remove any ‘middlemen charges’ that are applied by other food applications. Individual restaurants will have their own personalized application for food delivery and/or ordering in-dining.
-
+<p>The ‘Food Ordering App’ is an android application designed for restaurants to ease the communication with their customers. The purpose is to remove any ‘middlemen charges’ that are applied by other food applications. Individual restaurants will have their own personalized application for food delivery and/or ordering in-dining.
+</p>
+<br>
 <b>1.2 Document Conventions</b>
-There are no special conventions in this document.
-
+<p>There are no special conventions in this document.
+</p>
+<br>
 <b>1.3 Intended Audience and Reading Suggestions</b>
-This document is intended for faculty of Software Engineering Course and the members involved in developing this product. The reader may start reading from section 2.1.
-
+<p>This document is intended for faculty of Software Engineering Course and the members involved in developing this product. The reader may start reading from section 2.1.
+</p>
+<br>
 <b>1.4 Product Scope</b>
-<p>The purpose of this project is for each restaurant to have its own personalized app with multiple uses like: <li><l1>Personalized Loyalty Programs</l1><l2>Delivery management and tracking</l2><l3>Inventory management</l3><l4>Comprehensive menu display</l4></li></p>
-
+<p>The purpose of this project is for each restaurant to have its own personalized app with multiple uses like: 
+    <ul>
+        <li>Personalized Loyalty Programs</li>
+        <li>Delivery management and tracking</li>
+        <li>Inventory management</li>
+        <li>Comprehensive menu display</li>
+    </ul></p>
+<br>
 <b>1.5 References</b>
-    1. Material Design Google - https://material.io/design/
-    2. Firebase Google - https://firebase.google.com/
-
+    <ol>    
+        <li> Material Design Google - https://material.io/design/</li>
+        <li> Firebase Google - https://firebase.google.com/</li>
+    </ol>
 
 2. Overall Description
 
