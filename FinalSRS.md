@@ -18,7 +18,7 @@
 
 **30<sup>th</sup> August, 2018**
 
-**Table of Contents**
+<h3><b>Table of Contents</b></h3>
 
 **Table of Contents ii**
 
