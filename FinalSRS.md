@@ -1,8 +1,6 @@
-**Software Requirements Specification**
+<h1>**Software Requirements Specification**</h1>
 
-**for**
-
-**FODO (Food Ordering App)**
+<h3>**FODO (Food Ordering App)**</h3>
 
 **Version 1.0 approved**
 
@@ -18,7 +16,7 @@
 
 **NIIT University**
 
-**30^th^ August, 2018**
+**30^th August, 2018**
 
 **Table of Contents**
 
