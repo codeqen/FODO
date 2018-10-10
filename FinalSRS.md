@@ -1,6 +1,6 @@
-<h1>**Software Requirements Specification**</h1>
+<h1>Software Requirements Specification</h1>
 
-<h3>**FODO (Food Ordering App)**</h3>
+<h3>FODO (Food Ordering App)</h3>
 
 **Version 1.0 approved**
 
