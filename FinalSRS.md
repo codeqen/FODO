@@ -410,3 +410,5 @@ It will be determined based on the development of our product.
 -   *S/W Quality Attributes*
 
 -   *Other Requirements*
+
+<p>&copy; 2018 NIIT University.</p>
