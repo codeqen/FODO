@@ -16,7 +16,7 @@
 
 **NIIT University**
 
-**30^th August, 2018**
+**30<sup>th</sup> August, 2018**
 
 **Table of Contents**
 
@@ -270,7 +270,7 @@ order food, view order history, track their food and pay bill.*
 
 4.1.3 Functional Requirements
 
-![](media/image1.png){width="6.5in" height="4.668055555555555in"}
+//cannot display
 
 Viewing/Editing Menu
 --------------------
@@ -287,8 +287,7 @@ order.*
 
 4.2.3 Functional Requirements
 
-![](media/image2.png){width="3.958885608048994in"
-height="2.448257874015748in"}
+//cannot display
 
 Check Order History
 -------------------
@@ -304,8 +303,7 @@ only view them.*
 
 4.3.3 Functional Requirements
 
-![](media/image3.png){width="4.354774715660542in"
-height="2.489931102362205in"}
+//cannot display
 
 Manage Offers
 -------------
@@ -321,8 +319,7 @@ request of the restaurant.*
 
 4.4.3 Functional Requirements
 
-![](media/image4.png){width="3.7505238407699037in"
-height="1.5835542432195975in"}
+//cannot display
 
 Feedback/ Review/ Rating
 ------------------------
@@ -339,8 +336,7 @@ services in the future.*
 
 4.4.3 Functional Requirements
 
-![](media/image5.png){width="4.1672484689413825in"
-height="3.1462718722659666in"}
+//cannot display
 
 Help & Support
 --------------
@@ -356,8 +352,7 @@ contact details.*
 
 4.4.3 Functional Requirements
 
-![](media/image6.png){width="4.229757217847769in"
-height="1.791917104111986in"}
+//cannot display
 
 Other Nonfunctional Requirements
 ================================
