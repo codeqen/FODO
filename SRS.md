@@ -257,6 +257,13 @@ System Features
 ===============
 
 Sign-In
+Upload menu
+check history
+view orders
+view menu
+order item
+pay bill
+track order
 -------
 
 4.1.1 Description and Priority
